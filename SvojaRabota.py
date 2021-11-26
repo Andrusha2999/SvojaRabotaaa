@@ -2,7 +2,7 @@ from module1 import*
 palk=[1200,2500,750,395,1200]
 inimesed=["A","B","C","D","E"]
 def palgad(p,i):
-    valik=input("srednjaja zarplata - 1,\nminimalka zp - 2,\nMaksimalka zarplata - 3,\nDelete 4eloveka - 4,\nSortirovka - 5, \nADD 4eloveka - 6")
+    valik=input("srednjaja zarplata - 1,\nminimalka zp - 2,\nMaksimalka zarplata - 3,\nDelete 4eloveka - 4,\nADD 4eloveka - 5")
     if valik=="1":
         kesk_palk=round(keskmine(palk),2)
         print("srednjaja ",kesk_palk)
@@ -27,13 +27,7 @@ def palgad(p,i):
         else:
             for i in range(len(inimesed)):
                 print(inimesed[i]," saab kätte ", palk[i])
-    elif valik=="5":
-        p,i=sorteerimine(palk,inimesed)
-        for i in range(len(inimesed)):
-            print(inimesed[i]," budet ", palk[i])
-            print()
-            print()
-    elif valik=="6":                                        
+    elif valik=="5":                                        
         i=adding(palk,inimesed)
         print("Obnovlenie spiski: ")
         print(inimesed)
@@ -43,4 +37,5 @@ def palgad(p,i):
     elif valik=="7":
         x,y=kalk()
 while True:
+
     palgad(palk,inimesed)

@@ -39,39 +39,6 @@ def kustutamine():
             inimesed.pop(index)
             print()
             print()
-def sorteerimine(palk,inimesed):
-    abi_p=0
-    abi_i=""
-    n=len(inimesed)
-    for i in range(0,n-1):
-        for j in range(i+1,n):
-            if palk[i]>palk[j]:
-                abi_p=palk[i]
-                palk[i]=palk[j]
-                palk[j]=abi_p
-                abi_i=inimesed[i]
-                inimesed[i]=inimesed[j]
-                inimesed[j]=abi_i
-    return palk,inimesed
-    print()
-    print()
-def nimi(palk,inimesed):
-    ots_nimi=[]
-    ots_palk=[]
-    palk_keda=0
-    keda=input("VVedi imja: ")
-    n=len(inimesed)
-    for j in range(n):
-        if inimesed[j]==keda:
-            palk_keda=palk[j]
-            ots_nimi.append(inimesed[j])
-            ots_palk.append(palk_keda)
-            print()
-            print()
-        else:pass
-    return ots_nimi,ots_palk
-    print()
-    print()
 def maksimum(palk,inimesed):
     m_palgad=[]
     nimed=[]
@@ -121,22 +88,5 @@ def keskmine(palk):
         summa+=p
     k=summa/n
     return k
-    print()
-    print()
-def nimi(palk,inimesed):
-    ots_nimi=[]
-    ots_palk=[]
-    palk_keda=0
-    keda=input("VVedi imja: ")
-    n=len(inimesed)
-    for j in range(n):
-        if inimesed[j]==keda:
-            palk_keda=palk[j]
-            ots_nimi.append(inimesed[j])
-            ots_palk.append(palk_keda)
-            print()
-            print()
-        else:pass
-    return ots_nimi,ots_palk
     print()
     print()
