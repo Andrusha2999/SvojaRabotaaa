@@ -4,42 +4,17 @@
     add_zp=int(input("vvedite zp: "))
     palk.append(add_zp)
     return palk,inimesed
-def adding(palk,inimesed):
-    add=input("Imja 4eloveka:  ")
-    inimesed.append(add)
-    add_palk=int(input("ZP 4eloveka:  " ))
-    palk.append(add_palk)
-    return palk,inimesed
-    print()
-    print()
-def delete(palk, inimesed):
-    x=input("Imja Polzovatelja napisano bukvami - 1 ILI 2iframi - 2? ")
-    if x=="2":
-        i=int(input("VVedi nomer: "))
-        palk.pop(i-1)
-        inimesed.pop(i-1)
-    elif x=="1":
-        i=0
-        keda=input("VVedi Imja: ")
-        n=len(inimesed)
-        while i<n:
-            if keda==inimesed[i]:
-                inimesed.pop(i)
-                palk.pop(i)
-                n=len(inimesed)
-            else:
-                i+=1
-def kustutamine():
-    keskmin = keskmine(palk)
+    #добовляет людей и их зарплаты
+def udalenie():
+    keskmin = udalenie(palk)
     print(keskmin)
     for i in palk:
         if i < kesk:
             index = palk.index(i)
             palk.pop(index)
             inimesed.pop(index)
-            print()
-            print()
-def maksimum(palk,inimesed):
+            #удаляет людей и зп (ну как минимум должен был) 
+def maksimalka(palk,inimesed):
     m_palgad=[]
     nimed=[]
     max_palk=palk[0]
@@ -59,9 +34,8 @@ def maksimum(palk,inimesed):
         m_palgad.append(palk_copy.pop(j))
         nimed.append(inimesed_copy.pop(j))
     return m_palgad, nimed
-    print()
-    print()
-def minimum(palk,inimesed):
+#показывает максимальную зп
+def minimalka(palk,inimesed):
     m_palgad=[]
     nimed=[]
     min_palk=palk[0]
@@ -79,14 +53,12 @@ def minimum(palk,inimesed):
         m_palgad.append(palk_copy.pop(j))
         nimed.append(inimesed_copy.pop(j))
     return m_palgad, nimed
-    print()
-    print()
-def keskmine(palk):
+#показывает минимальную зп 
+def srednija(palk):
     summa=0
     n=len(palk)
     for p in palk:
         summa+=p
     k=summa/n
     return k
-    print()
-    print()
+#Показывает среднюю зп человека
