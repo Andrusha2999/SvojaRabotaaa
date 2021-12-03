@@ -1,38 +1,16 @@
-from module1 import*
-palk=[1200,2500,750,395,1200]
-inimesed=["A","B","C","D","E"]
-def palgad(p,i):
-    valik=input("srednjaja zarplata - 1,\nminimalka zp - 2,\nMaksimalka zarplata - 3,\nDelete 4eloveka - 4,\nADD 4eloveka - 5")
-    if valik=="1":
-        kesk_palk=round(srednija(palk),2)
-        print("srednjaja ",kesk_palk)
-        print()
-        print()
-    elif valik=="2":
-        m_palgad,nimi=minimalka(palk,inimesed)
-        for n in nimi:
-            print(m_palgad[0], " budet ",n)
-            print()
-            print()
-    elif valik=="3":
-        max_palk,kto=maksimalka(palk,inimesed)
-        print("maksimalnja zp ", max_palk, " budet  ",kto)
-        print()
-        print()
-    elif valik=="4":                                       
-        p,i=udalenie(palk,inimesed)
-        print(palk,inimesed)
-        if len(inimesed)==0:
-            print("Tühi list")
-        else:
-            for i in range(len(inimesed)):
-                print(inimesed[i]," saab kätte ", palk[i])
-    elif valik=="5":                                        
-        i=adding(palk,inimesed)
-        print("Obnovlenie spiski: ")
-        print(inimesed)
-        print(palk)
-        print("Dobavlen element", inimesed[-1])
-        print("S zp", str(palk[-1])+'€')
+from module1 import *
 while True:
-    palgad(palk,inimesed)
+    a=input("Funktsioonid: \n udalenie-1\n dobavka-2\n sort-3\n minimalka-4\n maksimalka-5\n")
+    if a=="1":
+        udalenie()
+    elif a=="2":
+        dobavka()
+    elif a=="3":
+        sort()
+    elif a=="4":
+        minimalka()
+    elif a=="5":
+        maksimalka()
+    else:
+        print("Pishi цифры, которые указаные")
+        break
