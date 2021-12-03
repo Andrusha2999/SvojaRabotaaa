@@ -1,5 +1,8 @@
 ﻿def lists()->list:
 	""" tegi listid failist
+	:param:var:stroka
+    :rtype list loeme:
+	:var stroka:
 	"""
 	palgad=[]
 	with open("denjgi.txt", "r") as f1: #avastame ebaõnnestumisi
@@ -9,17 +12,19 @@
 	with open ("inimised.txt", "r") as inimene:
 		for q in inimene:
 			inimesed.append(q.strip())
-	return palgad,inimesed
+	return liist
 
 def dobavka():
-	""" lisamine inimese ja palk
+	"""
+	lisamine inimese ja palk
+	:param:bool: palgad ja nimed
+    :rtype:list:
 	"""
 	N=1
 	palgad=[]
 	inimesed=[]
 	for n in range(N):
 		nimi=input("Siseta nimi: ")
-
 		inimesed.append(nimi)
 		palk=input("Siseta palgad: ")
 		palgad.append(palk)
@@ -27,6 +32,7 @@ def dobavka():
 		inimesed.write(nimi+"\n")	
 	with open("denjgi.txt", "a") as palgad: #lisame palk 
 		palgad.write(palk+"\n")
+	return palgad,inimesed
 
 def udalenie():
 	"""delete_inimene()
@@ -54,15 +60,19 @@ def udalenie():
 	d.close()
 
 def maksimalka():
-	"""Arvutamine suurim palk
-	"""
+	""" otsime suurim palk
+     :rtype: str, str:
+    :param: var kellel
+    """
 	palgad,inimesed=lists()
 	suurim=max(palgad) # muutuv indeks edaspidiseks kasutamiseks
 	b=palgad.index(suurim) 
 	print("kõike suured palga on "+inimesed[b]+" palga")
-
+	return suurim, kellel
 def minimalka():
-	"""arvumine kõige smal palk
+	"""
+	:rtype: str, str:
+    :param: var kellel
 	"""
 	palgad,inimesed=lists()
 	palgadS=palgad.copy()
