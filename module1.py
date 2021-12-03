@@ -44,11 +44,11 @@ def udalenie():
 		a=inimesed.index(nimi) 
 		inimesed.pop(a) 
 		palgad.pop(a) 
-	f=open("ludi.txt", "w")
+	f=open("inimised.txt", "w")
 	for g in inimesed:
 		f.write(g+"\n")
 	f.close()
-	d=open("zarplata.txt", "w")
+	d=open("denjgi.txt", "w")
 	for i in palgad:
 		d.write(i+"\n")
 	d.close()
