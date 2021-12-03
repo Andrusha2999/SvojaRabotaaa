@@ -1,10 +1,15 @@
 ﻿def adding(palk,inimesed):
+    """"
+    Programm lisab nimekirjad nimi ja palk
+    esimene arv nimi: str
+    teine arv - palk: int 
+    rtype var: str
+    """
     add=input("vvedite imja: ")
     inimesed.append(add)
     add_zp=int(input("vvedite zp: "))
     palk.append(add_zp)
     return palk,inimesed
-    #добовляет людей и их зарплаты
 def udalenie():
     keskmin = udalenie(palk)
     print(keskmin)
@@ -13,8 +18,11 @@ def udalenie():
             index = palk.index(i)
             palk.pop(index)
             inimesed.pop(index)
-            #удаляет людей и зп (ну как минимум должен был) 
 def maksimalka(palk,inimesed):
+    """
+    Programm kontrollib nimekirjad ja kuvab inimese maksimaalne palk
+     var type: int
+    """
     m_palgad=[]
     nimed=[]
     max_palk=palk[0]
@@ -34,8 +42,10 @@ def maksimalka(palk,inimesed):
         m_palgad.append(palk_copy.pop(j))
         nimed.append(inimesed_copy.pop(j))
     return m_palgad, nimed
-#показывает максимальную зп
 def minimalka(palk,inimesed):
+    """Programm kontrollib nimekirjad ja kuvab väikseima palgaga inimese.
+    sisestage var: int
+    """
     m_palgad=[]
     nimed=[]
     min_palk=palk[0]
@@ -53,12 +63,14 @@ def minimalka(palk,inimesed):
         m_palgad.append(palk_copy.pop(j))
         nimed.append(inimesed_copy.pop(j))
     return m_palgad, nimed
-#показывает минимальную зп 
 def srednija(palk):
+    """
+  Programm kontrollib nimekirjad ja kuvab keskmise palga.
+        sisestage var: int
+    """
     summa=0
     n=len(palk)
     for p in palk:
         summa+=p
     k=summa/n
     return k
-#Показывает среднюю зп человека
